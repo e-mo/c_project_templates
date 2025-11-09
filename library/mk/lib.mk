@@ -61,5 +61,5 @@ $(OBJ_SUBDIRS):
 $(BUILD_DIR):
 	mkdir -p $@
 
-.PHONY: all init install uninstall clean
+.PHONY: all install uninstall clean
 -include $(DEPS)
