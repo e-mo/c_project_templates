@@ -1,3 +1,3 @@
-int test(void) {
-    return 1;
+int int_add(int a, int b) {
+    return a + b;
 }
