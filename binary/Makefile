@@ -25,12 +25,12 @@ INSTALL ?= install
 INSTALL_PROGRAM ?= $(INSTALL)
 
 # Build Flags
-CFLAGS ?= -g -O2
+CFLAGS ?= -g -O0
 CPPFLAGS ?= 
 LDLIBS ?= 
 LDFLAGS ?=
 
-INTERNAL_CFLAGS := -std=gnu23 -fPIC -Wall -Wextra -pedantic -Wno-missing-field-initializers
+INTERNAL_CFLAGS := -std=gnu23 -Wall -Wextra -pedantic -Wno-missing-field-initializers
 
 # Install
 PREFIX ?= /usr/local

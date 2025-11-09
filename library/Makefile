@@ -30,7 +30,7 @@ INSTALL ?= install
 INSTALL_DATA ?= $(INSTALL) -m 644
 
 # Build Flags
-CFLAGS ?= -g -O2
+CFLAGS ?= -g -O0
 CPPFLAGS ?=
 ARFLAGS ?= rcs
 
