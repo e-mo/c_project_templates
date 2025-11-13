@@ -43,8 +43,8 @@ INC_DIR   := include
 OBJ_DIR   := $(BUILD_DIR)/obj
 
 # Build both by default
-BUILD_STATIC ?= true
-BUILD_SHARED ?= true
+BUILD_STATIC ?= yes
+BUILD_SHARED ?= yes
 
 # Tools
 CC ?= gcc
@@ -55,7 +55,7 @@ INSTALL_PROGRAM ?= $(INSTALL)
 INSTALL_DATA ?= $(INSTALL) -m 644
 
 # Build Flags
-CFLAGS ?= -g -O0
+CFLAGS ?= -g -O2
 CPPFLAGS ?=
 LDFLAGS ?=
 LDLIBS ?=

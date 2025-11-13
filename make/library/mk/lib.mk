@@ -44,10 +44,13 @@ LIB_STATIC := lib$(PROJECT).a
 # Shared library linker name
 LIB_SHARED := lib$(PROJECT).so
 
+VERSION := $(MAJOR).$(MINOR).$(PATCH)
+SOVERSION := $(MAJOR)
+
 # Shared library soname
-LIB_SHARED_SONAME := $(LIB_SHARED).$(MAJOR)
+LIB_SHARED_SONAME := $(LIB_SHARED).$(SOVERSION)
 # Shared library full name (the actual .so file generated)
-LIB_SHARED_FULL := $(LIB_SHARED).$(MAJOR).$(MINOR).$(PATCH)
+LIB_SHARED_FULL := $(LIB_SHARED).$(VERSION)
 
 # Set build targets
 LIB_STATIC_TARGET := $(BUILD_DIR)/$(LIB_STATIC)
@@ -55,10 +58,10 @@ LIB_SHARED_TARGET := $(BUILD_DIR)/$(LIB_SHARED_FULL)
 
 # Determine what to build
 TARGETS :=
-ifeq ($(BUILD_STATIC),true)
+ifeq ($(BUILD_STATIC),yes)
 	TARGETS += $(LIB_STATIC_TARGET)
 endif
-ifeq ($(BUILD_SHARED),true)
+ifeq ($(BUILD_SHARED),yes)
 	TARGETS += $(LIB_SHARED_TARGET)
 endif
 
@@ -68,6 +71,7 @@ all: $(TARGETS)
 # Build static library 
 $(LIB_STATIC_TARGET): $(OBJS) | $(BUILD_DIR)
 	$(AR) $(ARFLAGS) $@ $^
+	$(RANLIB) $@
 
 # Build shared library
 $(LIB_SHARED_TARGET): $(OBJS) | $(BUILD_DIR)

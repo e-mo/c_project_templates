@@ -2,7 +2,7 @@
 # C MAKEFILE - BINARY BUILD LOGIC
 # =============================================================================
 # PROJECT: make_template_bin
-# FILE: Makefile
+# FILE: bin.mk
 # 
 # DESCRIPTION:
 # Make template for building a C binary.
